@@ -10,11 +10,42 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://unpkg.com/bulma@0.8.0/css/bulma.min.css" />
   <link rel="stylesheet" href="https://creativethings11.github.io/Muzana.github.io/menikah.css" />
-  <link rel="stylesheet" href="https://creativethings11.github.io/Muzana.github.io/jquery.countdown.css" />
+
+  <style>
+    /* Countdown Styling */
+    #hitungmundur {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      font-size: 2rem;
+      margin-top: 20px;
+    }
+
+    #hitungmundur li {
+      margin: 0 10px;
+      text-align: center;
+    }
+
+    #hitungmundur li p {
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(95,2,2,0.5), rgba(48,47,47,0.9)), url('https://source.unsplash.com/1600x900/?wedding') center/cover no-repeat;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-direction: column;
+    }
+  </style>
 
   <!-- JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="https://creativethings11.github.io/Muzana.github.io/jquery.countdown.js"></script>
 </head>
 
 <body>
@@ -36,13 +67,13 @@
       <!-- Countdown -->
       <div>
         <ul id="hitungmundur">
-          <li><span class="days">45</span><p>Days</p></li>
+          <li><span class="days"></span><p>Days</p></li>
           <li>:</li>
-          <li><span class="hours">17</span><p>Hours</p></li>
+          <li><span class="hours"></span><p>Hours</p></li>
           <li>:</li>
-          <li><span class="minutes">41</span><p>Minutes</p></li>
+          <li><span class="minutes"></span><p>Minutes</p></li>
           <li>:</li>
-          <li><span class="seconds">00</span><p>Seconds</p></li>
+          <li><span class="seconds"></span><p>Seconds</p></li>
         </ul>
       </div>
 
@@ -145,6 +176,80 @@
   </section>
 
 </div>
+
+<!-- Countdown Script -->
+<script>
+(function ($) {
+  $.fn.countdown = function (options, callback) {
+    var settings = $.extend({
+      date: null,
+      offset: 0,
+      day: 'Day',
+      days: 'Days',
+      hour: 'Hour',
+      hours: 'Hours',
+      minute: 'Minute',
+      minutes: 'Minutes',
+      second: 'Second',
+      seconds: 'Seconds'
+    }, options);
+
+    if (!settings.date) { $.error('Date is not defined.'); }
+    if (!Date.parse(settings.date)) { $.error('Incorrect date format'); }
+
+    var container = this;
+
+    function currentDate() {
+      var date = new Date();
+      var utc = date.getTime() + (date.getTimezoneOffset() * 60000);
+      return new Date(utc + (3600000 * settings.offset));
+    }
+
+    function countdown() {
+      var target_date = new Date(settings.date);
+      var now = currentDate();
+      var difference = target_date - now;
+
+      if (difference < 0) {
+        clearInterval(interval);
+        if (callback) callback();
+        container.html("<li><p>Event Started!</p></li>");
+        return;
+      }
+
+      var _second = 1000,
+          _minute = _second * 60,
+          _hour = _minute * 60,
+          _day = _hour * 24;
+
+      var days = Math.floor(difference / _day),
+          hours = Math.floor((difference % _day) / _hour),
+          minutes = Math.floor((difference % _hour) / _minute),
+          seconds = Math.floor((difference % _minute) / _second);
+
+      days = days < 10 ? '0'+days : days;
+      hours = hours < 10 ? '0'+hours : hours;
+      minutes = minutes < 10 ? '0'+minutes : minutes;
+      seconds = seconds < 10 ? '0'+seconds : seconds;
+
+      container.find('.days').text(days);
+      container.find('.hours').text(hours);
+      container.find('.minutes').text(minutes);
+      container.find('.seconds').text(seconds);
+    }
+
+    countdown();
+    var interval = setInterval(countdown, 1000);
+  };
+})(jQuery);
+
+$(document).ready(function() {
+  $('#hitungmundur').countdown({
+    date: "May 3, 2026 11:30:00",
+    offset: 5.5
+  });
+});
+</script>
 
 </body>
 </html>
