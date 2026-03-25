@@ -4,6 +4,7 @@
   <meta charset="utf-8" />
   <meta name="theme-color" content="#BC8887" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
   <title>Wedding Invitation Mukthar & Farzana</title>
 
@@ -117,7 +118,7 @@
   line-height: 1.6;
 }
 
-/* Hero Background */
+/* Background */
 .wedding-hero {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
               url('https://source.unsplash.com/1600x900/?wedding,flowers') center/cover no-repeat;
@@ -126,45 +127,57 @@
 
 /* Subtitle */
 .wedding-subtitle {
+  font-family: 'Poppins', sans-serif;
   letter-spacing: 3px;
-  text-transform: uppercase;
   font-size: 14px;
   opacity: 0.8;
-  margin-bottom: 10px;
 }
 
-/* Main Names */
-.wedding-title {
-  font-size: 48px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  margin-bottom: 15px;
+/* Names (MAIN STYLE) */
+.wedding-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 60px;
+  line-height: 1.2;
+  margin: 15px 0;
 }
 
 /* Ampersand */
 .amp {
+  font-size: 40px;
   color: #ffb6b6;
-  font-weight: 400;
-  margin: 0 10px;
 }
 
-/* Date */
-.wedding-date {
-  font-size: 18px;
-  margin-bottom: 10px;
+/* Date & location */
+.wedding-date, .wedding-location {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
   opacity: 0.9;
 }
 
-/* Location */
-.wedding-location {
-  font-size: 16px;
-  opacity: 0.8;
-  line-height: 1.6;
+/* Countdown fix (keep inline) */
+#hitungmundur {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+#hitungmundur li {
+  margin: 0 8px;
+  text-align: center;
+}
+
+#hitungmundur li span {
+  font-size: 22px;
+  font-weight: bold;
 }
   </style>
 
   <!-- JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -179,8 +192,11 @@
           Wedding Invitation
         </p>
 
-        <h1 class="wedding-title">
-          Mukthar <span class="amp">&</span> Farzana
+        <!-- Names in vertical format -->
+        <h1 class="wedding-names">
+          Mukthar <br>
+          <span class="amp">&</span><br>
+          Farzana
         </h1>
 
         <p class="wedding-date">
@@ -191,6 +207,19 @@
           Galaxy Multipurpose Hall<br>
           Salmar, Karkala
         </p>
+
+        <!-- Countdown stays here -->
+        <div style="margin-top:30px;">
+          <ul id="hitungmundur">
+            <li><span class="days"></span><p>Days</p></li>
+            <li>:</li>
+            <li><span class="hours"></span><p>Hours</p></li>
+            <li>:</li>
+            <li><span class="minutes"></span><p>Minutes</p></li>
+            <li>:</li>
+            <li><span class="seconds"></span><p>Seconds</p></li>
+          </ul>
+        </div>
 
       </div>
     </div>
