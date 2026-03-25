@@ -83,6 +83,39 @@
   font-size: 28px;
   margin-bottom: 10px;
 }
+/* Location Card Styling */
+.location-card {
+  max-width: 400px;
+  margin: auto;
+  padding: 30px 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.location-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+.location-icon {
+  font-size: 35px;
+  margin-bottom: 15px;
+}
+
+.location-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.location-text {
+  font-size: 15px;
+  opacity: 0.8;
+  line-height: 1.6;
+}
   </style>
 
   <!-- JS -->
@@ -93,17 +126,31 @@
 
 <!-- Header -->
 <div class="header-wrapper" id="home">
-  <section class="hero is-large">
+  <section class="hero is-large wedding-hero">
     <div class="hero-body">
       <div class="container has-text-centered">
-        <h1 class="subtitle">Wedding Invitation</h1>
-        <h2 class="title">Mukthar & Farzana</h2>
-        <h4 class="subtitle">
-          Saturday, 03 May 2026 <br>
-          Galaxy Multipurpose Hall, Salmar Karkala <br>
-          Karkala
-        </h4>
+
+        <p class="subtitle wedding-subtitle">
+          Wedding Invitation
+        </p>
+
+        <h1 class="wedding-title">
+          Mukthar <span class="amp">&</span> Farzana
+        </h1>
+
+        <p class="wedding-date">
+          Saturday, 03 May 2026
+        </p>
+
+        <p class="wedding-location">
+          Galaxy Multipurpose Hall<br>
+          Salmar, Karkala
+        </p>
+
       </div>
+    </div>
+  </section>
+</div>
 
       <!-- Countdown -->
       <div>
@@ -158,7 +205,7 @@
         <div class="time-icon">📅</div>
         <p class="time-title">Date</p>
         <p class="time-value">
-          Saturday<br>
+          Sunday<br>
           <strong>03 May 2026</strong>
         </p>
       </div>
@@ -188,15 +235,30 @@
 
   <!-- Location -->
   <section class="section-darker" id="lokasi">
-    <div class="container">
-      <h1 class="title has-text-centered">Location</h1>
+  <div class="container has-text-centered">
 
-      <p class="has-text-centered">
-        <strong>Galaxy Multipurpose Hall</strong><br>
+    <h1 class="title" style="margin-bottom: 30px;">
+      Location
+    </h1>
+
+    <!-- Location Card -->
+    <div class="location-card">
+
+      <div class="location-icon">📍</div>
+
+      <h2 class="location-title">
+        Galaxy Multipurpose Hall
+      </h2>
+
+      <p class="location-text">
         Salmar, Karkala<br>
         Karnataka, India
       </p>
+
     </div>
+
+  </div>
+</section>
   <!-- Action Buttons -->
 <div class="has-text-centered" style="margin-top: 30px;">
 
