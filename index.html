@@ -497,23 +497,13 @@
   color: #666;
 }
   .venue-icon-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 15px;
-  padding: 8px 14px;
-  font-size: 0.85rem;
-  text-decoration: none;
-  color: #444;
-  border: 1px solid #ddd;
-  border-radius: 20px; /* pill shape */
+  border: 1px solid #c9a96e;
+  color: #6b4f2a;
   background: #fff;
-  transition: 0.3s;
 }
 
 .venue-icon-btn:hover {
-  background: #f5f5f5;
-  transform: translateY(-2px);
+  background: #f8f4ec;
 }
 </div> 
 </section>
@@ -557,58 +547,43 @@
   </style> 
 
   <!-- RSVP -->
-  <section class="section-dark has-text-centered">
+<section class="closing-section">
 
   <div class="container">
 
     <!-- Parents -->
-    <h2 class="title is-4" style="margin-bottom:10px;">
+    <h2 class="closing-title">
       Best Wishes From
       <br>
-      <b>Mr & Mrs. Mohammed N K </b>
+      <span>Mr & Mrs. Mohammed N K</span>
     </h2>
 
-    <p style="font-size:14px; opacity:0.8;">
+    <p class="closing-subtext">
       Subbottu House, Nooralbettu
     </p>
 
-    <br>
-
     <!-- Message -->
-    <p style="max-width:600px; margin:auto;">
+    <p class="closing-message">
       It is a great honor and happiness for us<br>
       if you can attend and give your blessings.<br><br>
-     
       Stay safe and take care.
     </p>
 
-    <br>
-
-    <!-- Family Members -->
-    <h4 style="margin-top:20px; font-weight:600;">
-      Family
-    </h4>
-
-    <p style="opacity:0.9;">
-       Umar Farooq / Thouseef<br>
-       Mubeen
+    <!-- Family -->
+    <h4 class="closing-heading">Family</h4>
+    <p class="closing-text">
+      Umar Farooq / Thouseef<br>
+      Mubeen
     </p>
 
-    <br>
-
     <!-- Contact -->
-    <h4 style="margin-top:20px; font-weight:600;">
-      Contact
-    </h4>
-
-    <p>
+    <h4 class="closing-heading">Contact</h4>
+    <p class="closing-text">
       📞 +91 9740550006
     </p>
 
-    <br>
-
     <!-- Closing -->
-    <p style="margin-top:20px;">
+    <p class="closing-footer">
       With love,<br>
       <strong>Mukthar & Farzana</strong>
     </p>
@@ -616,7 +591,67 @@
   </div>
 
 </section>
+<style>
+    /* Section background */
+    .closing-section {
+      background: linear-gradient(to bottom, #f9f9f9, #ffffff);
+      padding: 70px 20px;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+    }
 
+    .closing-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    .closing-title span {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #444;
+    }
+
+    .closing-subtext {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 25px;
+    }
+
+    .closing-message {
+      max-width: 600px;
+      margin: 0 auto 30px;
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.8;
+    }
+
+    .closing-heading {
+      margin-top: 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #333;
+    }
+
+    .closing-text {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 15px;
+    }
+
+    .closing-footer {
+      margin-top: 25px;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .closing-footer strong {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: #000;
+    }
+</style>
 </div>
 
 <!-- Countdown Script -->
