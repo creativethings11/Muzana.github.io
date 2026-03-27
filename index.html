@@ -345,10 +345,11 @@
 </style>
   </section>
 
-<section class="section-dark" id="Waktu">
+<!-- Wedding Schedule -->
+<section class="schedule-section" id="Waktu">
   <div class="container">
 
-    <h1 class="title has-text-centered" style="margin-bottom: 40px;">
+    <h1 class="section-title">
       Wedding Schedule
     </h1>
 
@@ -387,6 +388,112 @@
   </div>
 </section>
 
+<!-- Location -->
+<section class="location-section" id="lokasi">
+  <div class="container">
+
+    <h1 class="section-title">
+      Location
+    </h1>
+
+    <div class="location-card">
+      <div class="location-icon">📍</div>
+
+      <h2 class="location-title">
+        Galaxy Multipurpose Hall
+      </h2>
+
+      <p class="location-text">
+        Salmar, Karkala<br>
+        Karnataka, India
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<style>
+
+/* Section background */
+.schedule-section,
+.location-section {
+  background: #f7f7f7; /* soft premium grey */
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* Section title */
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  font-family: 'Playfair Display', serif;
+  color: #222;
+}
+
+/* Time cards layout */
+.time-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Card design */
+.time-card,
+.location-card {
+  background: #ffffff;
+  padding: 25px 20px;
+  border-radius: 12px;
+  width: 180px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.time-card:hover,
+.location-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Icons */
+.time-icon,
+.location-icon {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+/* Titles */
+.time-title {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+/* Values */
+.time-value {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Location specific */
+.location-card {
+  width: 260px;
+  margin: 0 auto;
+}
+
+.location-title {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #222;
+}
+
+.location-text {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+</style>
   <!-- Location -->
   <section class="section-darker" id="lokasi">
   <div class="container has-text-centered">
