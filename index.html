@@ -254,35 +254,33 @@
   
 <div class="header-wrapper" id="home">
   <section class="hero is-large wedding-hero">
+
+    <!-- Sparkles Layer -->
     <div class="sparkles"></div>
 
     <div class="hero-body">
       <div class="container has-text-centered">
 
-        <!-- Stylish Title -->
         <p class="subtitle wedding-subtitle">
           Wedding Invitation
         </p>
 
-        <!-- Names -->
         <h1 class="wedding-names">
           Mukthar <br>
           <span class="amp">&</span><br>
           Farzana
         </h1>
 
-        <!-- Stylish Date -->
         <p class="wedding-date">
           Sunday, 03 May 2026
         </p>
 
-        <!-- Stylish Venue -->
         <p class="wedding-location">
           Galaxy Multipurpose Hall<br>
           Salmar, Karkala
         </p>
 
-        <!-- Countdown stays here -->
+        <!-- Countdown -->
         <div style="margin-top:30px;">
           <ul id="hitungmundur">
             <li><span class="days"></span><p>Days</p></li>
@@ -294,23 +292,16 @@
             <li><span class="seconds"></span><p>Seconds</p></li>
           </ul>
         </div>
-<div class="scroll-down-text">
-    Scroll down to view the details
-    <div class="scroll-down"><span></span></div>
-  </div>
-</div>
+
+        <!-- Scroll text -->
+        <div class="scroll-down-text">
+          Scroll down to view the details
+          <div class="scroll-down"><span></span></div>
+        </div>
 
       </div>
     </div>
-  </section>
-</div>
-      </div>
-    </div>
-  </section>
-</div>
 
-
-    </div>
   </section>
 </div>
 
@@ -869,8 +860,11 @@ $(document).ready(function() {
 });
 </script>
 <script>
+document.addEventListener("DOMContentLoaded", function () {
   function createSparkles() {
     const container = document.querySelector('.sparkles');
+
+    if (!container) return;
 
     setInterval(() => {
       const sparkle = document.createElement('div');
@@ -889,6 +883,8 @@ $(document).ready(function() {
   }
 
   createSparkles();
+});
 </script>
+
 </body>
 </html>
