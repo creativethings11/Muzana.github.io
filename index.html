@@ -209,6 +209,7 @@
     opacity: 0;
   }
 }
+    
   </style>
 
   <!-- JS -->
@@ -223,24 +224,28 @@
 <div class="header-wrapper" id="home">
   <section class="hero is-large wedding-hero">
     <div class="sparkles"></div>
+
     <div class="hero-body">
       <div class="container has-text-centered">
 
+        <!-- Stylish Title -->
         <p class="subtitle wedding-subtitle">
           Wedding Invitation
         </p>
 
-        <!-- Names in vertical format -->
+        <!-- Names -->
         <h1 class="wedding-names">
           Mukthar <br>
           <span class="amp">&</span><br>
           Farzana
         </h1>
 
+        <!-- Stylish Date -->
         <p class="wedding-date">
-          Saturday, 03 May 2026
+          Sunday, 03 May 2026
         </p>
 
+        <!-- Stylish Venue -->
         <p class="wedding-location">
           Galaxy Multipurpose Hall<br>
           Salmar, Karkala
@@ -258,7 +263,14 @@
             <li><span class="seconds"></span><p>Seconds</p></li>
           </ul>
         </div>
+<div class="scroll-down">
+          <span></span>
+        </div>
 
+      </div>
+    </div>
+  </section>
+</div>
       </div>
     </div>
   </section>
@@ -341,7 +353,77 @@
   color: #d63384;
   font-weight: 500;
 }
+/* ===== New Hero Section Styles ===== */
 
+/* Wedding Invitation Title */
+.wedding-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  letter-spacing: 4px;
+  color: #f8e7d2;
+  margin-bottom: 10px;
+}
+
+/* Names */
+.wedding-names {
+  font-family: 'Great Vibes', cursive;
+  font-size: 70px;
+  line-height: 1.2;
+  margin: 15px 0;
+  color: #fff;
+}
+
+.amp {
+  font-size: 40px;
+  color: #ffd1dc;
+}
+
+/* Date */
+.wedding-date {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  margin-top: 10px;
+  color: #f5e6d3;
+  letter-spacing: 2px;
+}
+
+/* Location */
+.wedding-location {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin-top: 5px;
+  color: #ddd;
+}
+
+/* Scroll Down Animation */
+.scroll-down {
+  margin-top: 40px;
+}
+
+.scroll-down span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(45deg);
+  margin: auto;
+  animation: scrollAnim 1.5s infinite;
+}
+
+@keyframes scrollAnim {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+}
 </style>
   </section>
 
