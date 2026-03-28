@@ -174,8 +174,8 @@
   font-size: 22px;
   font-weight: bold;
 }
-    /* Sparkle container */
-.sparkles {
+  /* Petals container */
+.petals {
   position: absolute;
   top: 0;
   left: 0;
@@ -183,64 +183,34 @@
   height: 100%;
   pointer-events: none;
   overflow: hidden;
+  z-index: 1; /* Keep below text */
 }
 
-/* Each sparkle */
-.sparkle {
+/* Each petal */
+.petal {
   position: absolute;
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: sparkleAnim 4s linear infinite;
+  width: 20px;
+  height: 20px;
+  background-image: url('https://i.ibb.co/3yp0JcY/petal.png'); /* sample petal image */
+  background-size: cover;
+  opacity: 0.9;
+  animation: fall linear infinite;
 }
 
-/* Animation */
-@keyframes sparkleAnim {
+/* Falling animation */
+@keyframes fall {
   0% {
-    transform: translateY(0) scale(0.5);
+    transform: translateY(-50px) rotate(0deg);
     opacity: 0;
   }
   50% {
     opacity: 1;
   }
   100% {
-    transform: translateY(-200px) scale(1);
+    transform: translateY(100vh) rotate(360deg);
     opacity: 0;
   }
 }
- /* FIX: Sparkles visibility */
-.hero {
-  position: relative; /* IMPORTANT */
-}
-
-/* Sparkle layer */
-.sparkles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
-}
-
-/* Keep text above sparkles */
-.hero-body {
-  position: relative;
-  z-index: 2;
-}
-
-/* Optional premium sparkle */
-.sparkle {
-  width: 4px;
-  height: 4px;
-  background: gold;
-  border-radius: 50%;
-  box-shadow: 0 0 8px gold;
-}   
   </style>
 
   <!-- JS -->
@@ -256,7 +226,7 @@
   <section class="hero is-large wedding-hero">
 
     <!-- Sparkles Layer -->
-    <div class="sparkles"></div>
+   <div class="petals"></div>
 
     <div class="hero-body">
       <div class="container has-text-centered">
@@ -861,28 +831,34 @@ $(document).ready(function() {
 </script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  function createSparkles() {
-    const container = document.querySelector('.sparkles');
+ function createPetals() {
+  const container = document.querySelector('.petals');
 
-    if (!container) return;
+  setInterval(() => {
+    const petal = document.createElement('div');
+    petal.classList.add('petal');
 
-    setInterval(() => {
-      const sparkle = document.createElement('div');
-      sparkle.classList.add('sparkle');
+    // Random horizontal start
+    petal.style.left = Math.random() * 100 + '%';
 
-      sparkle.style.left = Math.random() * 100 + '%';
-      sparkle.style.animationDuration = (Math.random() * 3 + 2) + 's';
+    // Random size
+    const size = Math.random() * 15 + 15; // 15px - 30px
+    petal.style.width = size + 'px';
+    petal.style.height = size + 'px';
 
-      container.appendChild(sparkle);
+    // Random duration
+    petal.style.animationDuration = (Math.random() * 5 + 5) + 's';
 
-      setTimeout(() => {
-        sparkle.remove();
-      }, 5000);
+    container.appendChild(petal);
 
-    }, 200);
-  }
+    // Remove petal after animation ends
+    setTimeout(() => {
+      petal.remove();
+    }, 10000); // slightly longer than max animation duration
+  }, 300); // frequency of petals
+}
 
-  createSparkles();
+createPetals();
 });
 </script>
 
