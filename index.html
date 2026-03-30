@@ -556,7 +556,7 @@
 .contact-numbers {
   display: flex;
   justify-content: center;
-  gap: 15px; /* space between numbers */
+  gap: 15px;
   flex-wrap: wrap;
   margin-top: 10px;
 }
@@ -564,17 +564,19 @@
 .contact-numbers span {
   display: inline-block;
   padding: 8px 16px;
-  background: #c9a96e; /* golden shade */
-  color: #fff;
+  background: #fff8f0; /* soft cream */
+  color: #6b4f2a; /* elegant brown */
+  border: 1px solid #c9a96e; /* subtle golden border */
   border-radius: 25px;
   font-family: 'Playfair Display', serif;
   font-weight: 500;
   font-size: 0.95rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08); /* soft shadow */
   transition: 0.3s;
 }
 
 .contact-numbers span:hover {
-  background: #b48c4d;
+  background: #fdf1e0; /* slightly darker cream */
   transform: translateY(-2px);
   cursor: pointer;
 }
