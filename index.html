@@ -540,16 +540,45 @@
    <h4 class="closing-subtitle">Best wishes from</h4>
 
 <div class="family-tags">
-  <span>Mr & Mrs Farook</span>
+  <span>Mr & Mrs Umar</span>
   <span>Mr & Mrs Touseef</span>
   <span>Mr & Mrs Mubeen</span>
   <span>Family & Friends</span>
 </div>
 
     <h4 class="closing-subtitle">Contact</h4>
-    <p class="closing-text">
-      📞 +91 9740550006
-    </p>
+<div class="contact-numbers">
+  <span>📞 +91 9740550006</span>
+  <span>📞 +91 8277571506</span>
+</div>
+
+<style>
+.contact-numbers {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* space between numbers */
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.contact-numbers span {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #c9a96e; /* golden shade */
+  color: #fff;
+  border-radius: 25px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.contact-numbers span:hover {
+  background: #b48c4d;
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+</style>
 
     <p class="closing-message" style="margin-top: 20px;">
       With love,<br>
@@ -814,6 +843,28 @@
 .modal-content.zoomed {
   transform: scale(1.5);
   cursor: zoom-out;
+}
+  /* ===== GAP FIX ===== */
+
+/* Reduce space for sections */
+.schedule-section,
+.location-section {
+  padding: 30px 15px !important;
+}
+
+/* Reduce title gap */
+.section-title {
+  margin-bottom: 20px !important;
+}
+
+/* Reduce spacing inside schedule */
+.time-row {
+  margin-bottom: 10px !important;
+}
+
+/* Reduce space above location card */
+.location-card {
+  margin-top: 10px !important;
 }
 </style>
 </div>
