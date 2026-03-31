@@ -507,7 +507,7 @@
   <div class="mini-actions">
 
     <!-- View Invitation -->
-   <a href="#" class="mini-link" onclick="openModal()">
+   <a href="javascript:void(0)" class="mini-link" onclick="openModal()">
   📄 View Card
 </a>
 
@@ -1026,6 +1026,23 @@ document.addEventListener("DOMContentLoaded", function () {
     img.classList.toggle("zoomed");
   });
 });
+</script>
+  <div id="imageModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImg" src="wed.jpeg">
+</div>
+  <script>
+function openVideoModal() {
+  document.getElementById("videoModal").style.display = "block";
+}
+
+function closeVideoModal() {
+  document.getElementById("videoModal").style.display = "none";
+
+  const video = document.getElementById("modalVideo");
+  video.pause();
+  video.currentTime = 0;
+}
 </script>
 </body>
 </html>
