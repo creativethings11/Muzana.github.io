@@ -512,11 +512,9 @@
 </a>
 
     <!-- Watch Video -->
-    <a href=""
-       target="_blank"
-       class="mini-link">
-      🎥 Watch Video
-    </a>
+    <a href="#" class="mini-link" onclick="openVideoModal()">
+  🎥 Watch Video
+</a>
 
   </div>
 </section>
@@ -868,6 +866,31 @@
 .location-card {
   margin-top: 10px !important;
 }
+  #modalVideo {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 70%;
+  border-radius: 10px;
+}
+
+.download-btn {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  padding: 10px 20px;
+  background: #fff8f0;
+  color: #6b4f2a;
+  border: 1px solid #c9a96e;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: 'Playfair Display', serif;
+  transition: 0.3s;
+}
+
+.download-btn:hover {
+  background: #fdf1e0;
+}
 </style>
 </div>
 
@@ -976,9 +999,16 @@ document.addEventListener("DOMContentLoaded", function () {
 createPetals();
 });
 </script>
-<div id="imageModal" class="modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modalImg" src="wed.jpeg">
+<div id="videoModal" class="modal">
+  <span class="close" onclick="closeVideoModal()">&times;</span>
+
+  <video id="modalVideo" controls>
+    <source src="M&F.mp4" type="video/mp4">
+  </video>
+
+  <a href="M&F.mp4" download class="download-btn">
+    ⬇ Download Video
+  </a>
 </div>
   <script>
 function openModal() {
