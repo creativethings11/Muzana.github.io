@@ -838,12 +838,13 @@
 
 /* Close button */
 .close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
+  position: fixed;
+  top: 15px;
+  right: 20px;
   color: #fff;
   font-size: 35px;
   cursor: pointer;
+  z-index: 10000;
 }
 
 /* Zoom effect */
@@ -1033,6 +1034,8 @@ document.addEventListener("DOMContentLoaded", function () {
 createPetals();
 });
 </script>
+
+  <!-- VIDEO MODAL -->
 <div id="videoModal" class="modal">
   <span class="close" onclick="closeVideoModal()">&times;</span>
 
@@ -1044,11 +1047,12 @@ createPetals();
     ⬇ Download Video
   </a>
 </div>
-  <div id="imageModal" class="modal">
+
+<!-- IMAGE MODAL -->
+<div id="imageModal" class="modal">
   <span class="close" onclick="closeModal()">&times;</span>
 
-  <div style="text-align:center; padding-top:20px;">
-    
+  <div style="text-align:center;">
     <img class="modal-content" id="modalImg" src="M&F.JPEG">
 
     <br><br>
@@ -1056,8 +1060,8 @@ createPetals();
     <a href="M&F.JPEG" download class="download-btn">
       ⬇ Download Card
     </a>
-
   </div>
+</div>
   <script>
 function openModal() {
   document.getElementById("imageModal").style.display = "block";
@@ -1076,7 +1080,15 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
   
-  <script>
+ <script>
+function openModal() {
+  document.getElementById("imageModal").style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("imageModal").style.display = "none";
+}
+
 function openVideoModal() {
   document.getElementById("videoModal").style.display = "block";
 }
@@ -1088,8 +1100,17 @@ function closeVideoModal() {
   video.pause();
   video.currentTime = 0;
 }
-    
-</div>
+
+// Image zoom
+document.addEventListener("DOMContentLoaded", function () {
+  const img = document.getElementById("modalImg");
+
+  if (img) {
+    img.addEventListener("click", function () {
+      img.classList.toggle("zoomed");
+    });
+  }
+});
 </script>
 </body>
 </html>
