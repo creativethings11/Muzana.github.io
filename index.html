@@ -506,18 +506,10 @@
 <section class="mini-actions-section">
   <div class="mini-actions">
 
-    <!-- View Invitation -->
-  <div id="imageModal" class="modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-
-  <!-- Image -->
-  <img class="modal-content" id="modalImg" src="M&F.jpeg">
-
-  <!-- Download Button -->
-  <a href="M&F.jpeg" download class="download-btn">
-    ⬇ Download Card
-  </a>
-</div>
+   
+    <a href="javascript:void(0)" class="mini-link" onclick="openModal()">
+  📄 View Card
+</a>
 
     <!-- Watch Video -->
     <a href="#" class="mini-link" onclick="openVideoModal()">
@@ -1056,6 +1048,15 @@ function closeVideoModal() {
   video.pause();
   video.currentTime = 0;
 }
+    <div id="imageModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+
+  <img class="modal-content" id="modalImg" src="M&F.jpeg">
+
+  <a href="M&F.jpeg" download class="download-btn">
+    ⬇ Download Card
+  </a>
+</div>
 </script>
 </body>
 </html>
